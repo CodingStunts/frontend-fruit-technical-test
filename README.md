@@ -1,20 +1,16 @@
 
-## Frontend Technical Test
+# Frontend Technical Test
 
 In this technical you will be using an API to create an interface to allow users to explore the API's data.
 
-The API being used is https://www.fruityvice.com/ which has lots of data about fruit. Below is a list of API calls that will be useful when completing this task.
+The API being used is https://www.fruityvice.com/doc/index.html which has lots of data about fruit. Below is a list of API calls that will be useful when completing this task.
 
-- /api/fruit/all - get a list of all fruit
-- /api/fruit/{ID} - get a fruit by ID
-- /api/fruit/{name} - get a fruit by name
-
-# Requirements
+## Requirements
 
 1. Display all fruits in a list
     - Show the name of each fruit
     - Show an image for each fruit
-    - 
+    - There are no images in the API so you will have to use keywords to source the images
 
 2. Create a page for each fruit
     - When a user clicks on a fruit they should be take to the fruit page
@@ -38,7 +34,7 @@ The API being used is https://www.fruityvice.com/ which has lots of data about f
     - When the user clicks "Load more" 6 more items should be show
     - When all items are displayed "Load more" should be hidden
 
-# Extra information
+## Extra information
 
 - There are a few mobile wireframes in the "wireframes" folder, use these and stick to the design.
 - The designs are wireframes so you are free to chose a colour scheme.
