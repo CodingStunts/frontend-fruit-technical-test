@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getAllFruit } from "../utils/api-calls";
+import FruitCard from "./FruitCard";
 
 export const AllFruits = () => {
   const [fruitList, setFruitList] = useState([]);
@@ -8,15 +10,25 @@ export const AllFruits = () => {
     getAllFruit().then((fruitData) => {
       setFruitList(fruitData);
     });
-  }, []);
+  }, [fruitList]);
 
   return (
     <div>
-      <h1>Hi, this is all fruits!</h1>
-      {fruitList ? (
+      <section className="header">
+        <h1>Fruits.co.uk</h1>
+        <h2>Sort</h2>
+      </section>
+      {fruitList.length > 0 ? (
         <ul>
-          <li>{fruitList[0].name}</li>
-          <li>Working!</li>
+          {fruitList.map((fruit) => {
+            return (
+              <Link to={`/${fruit.name}`}>
+                <li key={fruit.id}>
+                  <FruitCard fruit={fruit} />
+                </li>
+              </Link>
+            );
+          })}
         </ul>
       ) : (
         <h2>Loading...</h2>

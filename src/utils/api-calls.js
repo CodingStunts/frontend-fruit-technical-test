@@ -1,22 +1,20 @@
 import axios from "axios";
-import apiProxy from "../api-proxy/api-proxy";
 
 //Base API call
 export const fruitAPI = axios.create({
-  baseURL: apiProxy,
+  baseURL: "https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api",
 });
 
 // 1. All fruit GET request
 export const getAllFruit = () => {
-  return fruitAPI.get("fruit/all").then(({ fruitList }) => {
-    console.log(fruitList);
-    return fruitList;
+  return fruitAPI.get("/fruit/all").then((response) => {
+    return response.data;
   });
 };
 
 // 2. Single fruit by id/name GET request - Name, genus, family, nutrition info, image. (As per wire frame)
-export const getSingleFruit = (id) => {
-  return fruitAPI.get(`fruit/all/${id}`).then(({ fruitData }) => {
-    return fruitData;
+export const getSingleFruit = (fruitName) => {
+  return fruitAPI.get(`/fruit/${fruitName}`).then((response) => {
+    return response.data;
   });
 };
