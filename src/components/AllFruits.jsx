@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllFruit } from "../utils/api-calls";
 import FruitCard from "./FruitCard";
+import SortFruit from "./SortFruit";
 
 export const AllFruits = () => {
   const [fruitList, setFruitList] = useState([]);
@@ -16,7 +17,7 @@ export const AllFruits = () => {
     <div>
       <section className="header">
         <h1>Fruits.co.uk</h1>
-        <h2>Sort</h2>
+        <SortFruit />
       </section>
       {fruitList.length > 0 ? (
         <ul>
