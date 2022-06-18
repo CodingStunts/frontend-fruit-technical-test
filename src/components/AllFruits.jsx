@@ -11,13 +11,13 @@ export const AllFruits = () => {
     getAllFruit().then((fruitData) => {
       setFruitList(fruitData);
     });
-  }, [fruitList]);
-
+  }, []);
+  console.log(fruitList);
   return (
     <div>
       <section className="header">
         <h1>Fruits.co.uk</h1>
-        <SortFruit />
+        <SortFruit fruitList={fruitList} setFruitList={setFruitList} />
       </section>
       {fruitList.length > 0 ? (
         <ul>
