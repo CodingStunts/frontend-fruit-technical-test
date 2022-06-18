@@ -50,7 +50,9 @@ export const AllFruits = () => {
       ) : (
         <h2>Loading...</h2>
       )}
-      <button onClick={() => moreFruit()}>Load more</button>
+      {numberOfResults < fruitList.length ? (
+        <button onClick={() => moreFruit()}>Load more</button>
+      ) : null}
     </div>
   );
 };
