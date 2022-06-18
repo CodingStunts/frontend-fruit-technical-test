@@ -5,8 +5,10 @@ import FruitCard from "./FruitCard";
 import SortFruit from "./SortFruit";
 
 export const AllFruits = () => {
+  const resultsPerLoad = 6;
   const [fruitList, setFruitList] = useState([]);
   const [fruitListCopy, setFruitListCopy] = useState([]);
+  const [numberOfResults, setNumberOfResults] = useState(resultsPerLoad);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -15,6 +17,10 @@ export const AllFruits = () => {
       setFruitListCopy(fruitData);
     });
   }, []);
+
+  const moreFruit = () => {
+    setNumberOfResults(numberOfResults + resultsPerLoad);
+  };
 
   return (
     <div>
@@ -31,7 +37,7 @@ export const AllFruits = () => {
       </section>
       {fruitList.length > 0 ? (
         <ul>
-          {fruitList.map((fruit) => {
+          {fruitList.slice(0, numberOfResults).map((fruit) => {
             return (
               <Link to={`/${fruit.name}`}>
                 <li key={fruit.id}>
@@ -44,6 +50,7 @@ export const AllFruits = () => {
       ) : (
         <h2>Loading...</h2>
       )}
+      <button onClick={() => moreFruit()}>Load more</button>
     </div>
   );
 };
