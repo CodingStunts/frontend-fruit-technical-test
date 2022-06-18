@@ -1,9 +1,13 @@
 import { sortOrder } from "../utils/sort-order.js";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
-const SortFruit = ({ fruitList, setFruitList }) => {
+//Still need to implement functionality on CLEAR button.
+
+const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
   const [sortCriteria, setSortCriteria] = useState("");
   const [order, setOrder] = useState("");
+  const [sortParams, setSortParams] = useSearchParams();
 
   const handleSort = (e) => {
     e.preventDefault();
@@ -15,10 +19,16 @@ const SortFruit = ({ fruitList, setFruitList }) => {
     setOrder(e.target.value);
   };
 
+  //Tried using useNavigate to push "/sort before the query string but couldn't get it working."
   const handleSortSubmit = (e) => {
     e.preventDefault();
+    setSortParams({ nutrition: sortCriteria, order: order });
     let sortReturn = sortOrder(fruitList, sortCriteria, order);
     setFruitList(sortReturn);
+  };
+
+  const resetSort = () => {
+    setFruitList(fruitListCopy);
   };
 
   return (
@@ -77,23 +87,27 @@ const SortFruit = ({ fruitList, setFruitList }) => {
           <h3>Sort order</h3>
           <input
             type="radio"
-            id="desc"
-            value="desc"
+            id="highToLow"
+            value="highToLow"
             name="order"
             onChange={handleOrder}
           />
-          <label for="desc">High to low</label>
+          <label for="highToLow">High to low</label>
           <input
             type="radio"
-            id="asc"
-            value="asc"
+            id="lowToHigh"
+            value="lowToHigh"
             name="order"
             onChange={handleOrder}
           />
-          <label for="asc">Low to high</label>
+          <label for="lowToHigh">Low to high</label>
         </section>
-        <button type="">Clear sort</button>
-        <button type="submit">Confirm sort</button>
+        <button type="reset" value="clear" onClick={resetSort}>
+          Clear sort
+        </button>
+        <button type="submit" value="confirm">
+          Confirm sort
+        </button>
       </form>
     </div>
   );

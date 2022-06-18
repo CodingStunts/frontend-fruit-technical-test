@@ -4,9 +4,9 @@ export const sortOrder = (fruitList, sortCriteria, order) => {
     (a, b) => a.nutritions[sortCriteria] - b.nutritions[sortCriteria]
   );
 
-  if (order === "asc") {
+  if (order === "lowToHigh") {
     return sortedArray;
-  } else if (order === "desc") {
+  } else if (order === "highToLow") {
     const descArray = sortedArray.reverse();
     return descArray;
   }

@@ -6,18 +6,29 @@ import SortFruit from "./SortFruit";
 
 export const AllFruits = () => {
   const [fruitList, setFruitList] = useState([]);
+  const [fruitListCopy, setFruitListCopy] = useState([]);
 
   useEffect(() => {
     getAllFruit().then((fruitData) => {
       setFruitList(fruitData);
+      setFruitListCopy(fruitData);
     });
   }, []);
-  console.log(fruitList);
+
+  const openSortMenu = () => {
+    //Will open the sort menu
+  };
+
   return (
     <div>
       <section className="header">
         <h1>Fruits.co.uk</h1>
-        <SortFruit fruitList={fruitList} setFruitList={setFruitList} />
+        <button onClick={openSortMenu}>Sort</button>
+        <SortFruit
+          fruitList={fruitList}
+          fruitListCopy={fruitListCopy}
+          setFruitList={setFruitList}
+        />
       </section>
       {fruitList.length > 0 ? (
         <ul>
