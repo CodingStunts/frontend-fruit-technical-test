@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getSingleFruit } from "../utils/api-calls";
 
 export const SingleFruit = () => {
   const [fruit, setFruit] = useState([]);
-
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSingleFruit(id).then((fruitData) => {
@@ -13,6 +13,7 @@ export const SingleFruit = () => {
     });
   }, [id]);
 
+  //Getting a yellow warning on console when calling navigation(-1) from onClick rather than a useEffect. Checking out later.
   return (
     <div>
       <section className="header">
@@ -39,6 +40,7 @@ export const SingleFruit = () => {
       ) : (
         <h2>Loading...</h2>
       )}
+      <button onClick={() => navigate(-1)}>Back to all fruit</button>
     </div>
   );
 };
