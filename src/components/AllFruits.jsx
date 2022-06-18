@@ -7,6 +7,7 @@ import SortFruit from "./SortFruit";
 export const AllFruits = () => {
   const [fruitList, setFruitList] = useState([]);
   const [fruitListCopy, setFruitListCopy] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     getAllFruit().then((fruitData) => {
@@ -15,20 +16,18 @@ export const AllFruits = () => {
     });
   }, []);
 
-  const openSortMenu = () => {
-    //Will open the sort menu
-  };
-
   return (
     <div>
       <section className="header">
         <h1>Fruits.co.uk</h1>
-        <button onClick={openSortMenu}>Sort</button>
-        <SortFruit
-          fruitList={fruitList}
-          fruitListCopy={fruitListCopy}
-          setFruitList={setFruitList}
-        />
+        <button onClick={() => setMenuOpen(!menuOpen)}>Sort</button>
+        {menuOpen ? (
+          <SortFruit
+            fruitList={fruitList}
+            fruitListCopy={fruitListCopy}
+            setFruitList={setFruitList}
+          />
+        ) : null}
       </section>
       {fruitList.length > 0 ? (
         <ul>

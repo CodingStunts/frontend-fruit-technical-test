@@ -29,6 +29,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
 
   const resetSort = () => {
     setFruitList(fruitListCopy);
+    setSortParams({});
   };
 
   return (
