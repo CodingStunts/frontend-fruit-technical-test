@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getSingleFruit } from "../utils/api-calls";
+import { getSingleFruit, getPhotos } from "../utils/api-calls";
 import styles from "../Modules-css/SingleFruitPage.module.css";
 
 export const SingleFruit = () => {
   const [fruit, setFruit] = useState([]);
+  const [photo, setPhoto] = useState("");
   const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -18,6 +19,14 @@ export const SingleFruit = () => {
         setError(err.message);
       });
   }, [id]);
+
+  getPhotos(fruit.name)
+    .then((photoData) => {
+      setPhoto(photoData.results[0].urls.regular);
+    })
+    .catch((err) => {
+      setError(err.message);
+    });
 
   return (
     <div>
@@ -46,7 +55,8 @@ export const SingleFruit = () => {
             <img
               className={styles.fruitImage}
               alt={fruit.name}
-              src="https://merriam-webster.com/assets/mw/images/gallery/gal-wap-slideshow-slide/assorted%20fruit%20photo-6825-8b8e196d9d5fd4470911d69ad25fa5e0@1x.jpg"
+              width="350"
+              src={photo}
             ></img>
             <button onClick={() => navigate(-1)}>Back to all fruit</button>
           </section>

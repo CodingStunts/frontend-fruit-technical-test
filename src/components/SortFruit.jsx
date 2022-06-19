@@ -18,7 +18,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
     setOrder(e.target.value);
   };
 
-  //Tried using useNavigate to push "/sort before the query string but couldn't get it working."
+  //Tried using useNavigate to push "/sort" before the query string but couldn't get it working.
   const handleSortSubmit = (e) => {
     e.preventDefault();
     setSortParams({ nutrition: sortCriteria, order: order });
