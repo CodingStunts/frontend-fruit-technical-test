@@ -36,8 +36,8 @@
 ✔️ There are a few mobile wireframes in the "wireframes" folder, use these and stick to the design. <br>
 ✔️ The designs are wireframes so you are free to chose a colour scheme. <br>
 
-- Test the functionality that you write. <br>
-  ✔️ Make sure errors are handled and think about the user experience when handling those errors. <br>
+✔️ Test the functionality that you write. <br>
+✔️ Make sure errors are handled and think about the user experience when handling those errors. <br>
 
 # Details
 
