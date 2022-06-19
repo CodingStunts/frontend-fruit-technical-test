@@ -1,8 +1,7 @@
 import { sortOrder } from "../utils/sort-order.js";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
-//Still need to implement functionality on CLEAR button.
+import styles from "../Modules-css/SortBox.module.css";
 
 const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
   const [sortCriteria, setSortCriteria] = useState("");
@@ -33,10 +32,10 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
   };
 
   return (
-    <div>
-      <h3>Sort fruit</h3>
+    <div className={styles.sortBox}>
+      <h3 className={styles.title}>Sort fruit</h3>
       <form onSubmit={handleSortSubmit}>
-        <section className="sortByNutrition">
+        <section className={styles.sortByNutrition}>
           <h3>Sort by nutrition</h3>
           <input
             type="radio"
@@ -84,7 +83,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
           <label for="sugar">Sugar</label>
           <br />
         </section>
-        <section className="sortByOrder">
+        <section className={styles.sortByOrder}>
           <h3>Sort order</h3>
           <input
             type="radio"
@@ -94,6 +93,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             onChange={handleOrder}
           />
           <label for="highToLow">High to low</label>
+          <br />
           <input
             type="radio"
             id="lowToHigh"

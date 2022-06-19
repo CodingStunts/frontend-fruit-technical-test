@@ -6,6 +6,6 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
-
+.env
 # macOS
 .DS_Store

@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1vh 3vw;
+  border-bottom: 1px rgb(82, 196, 169) solid;
+  background-color: rgb(244, 123, 141);
+}
+
+.singleFruitPage {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(254, 237, 220);
+}
+
+.title {
+  font-size: 8vw;
+  margin-right: 35vw;
+}
+
+.fruitDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.photoAndButton {
+  display: flex;
+  flex-direction: column;
+}
+
+.fruitImage {
+  max-width: 50vw;
+  margin: 10vh 0 25vh;
+}
+
+.names {
+  text-align: left;
+  margin: 5vw;
+}
+
+.fruitName {
+  font-size: 6vh;
+}
+
+.nutrition {
+  border: 1px rgb(82, 196, 169) solid;
+  text-align: left;
+  padding: 1vw;
+  margin: 5vw;
+  width: 30vw;
+  background-color: rgb(253, 226, 199);
+}

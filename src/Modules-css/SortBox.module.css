@@ -1,0 +1,33 @@
+.sortBox {
+  width: 50vw;
+  border: 1px rgb(82, 196, 169) solid;
+  margin: 3vw;
+  background-color: rgb(253, 226, 199);
+}
+
+.title {
+  text-align: center;
+}
+
+.sortByNutrition {
+  border: 1px rgb(82, 196, 169) solid;
+  text-align: left;
+  padding: 1vw;
+  margin: 2vw;
+  background-color: rgb(254, 237, 220);
+}
+
+.sortByOrder {
+  border: 1px rgb(82, 196, 169) solid;
+  text-align: left;
+  padding: 1vw;
+  margin: 2vw;
+  background-color: rgb(254, 237, 220);
+}
+
+button {
+  background-color: rgb(198, 255, 236);
+  border: none;
+  padding: 5px 10px;
+  margin: 1vw;
+}

@@ -1,0 +1,9 @@
+.fruitCard {
+  border: solid 1px rgb(82, 196, 169);
+  width: 150px;
+  background-color: rgb(198, 255, 236);
+  text-decoration: none;
+  font-size: 2.5vh;
+  color: black;
+  margin: 5vw;
+}

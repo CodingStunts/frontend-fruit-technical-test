@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getAllFruit } from "../utils/api-calls";
 import FruitCard from "./FruitCard";
 import SortFruit from "./SortFruit";
+import styles from "../Modules-css/AllFruits.module.css";
 
 export const AllFruits = () => {
   const resultsPerLoad = 6;
@@ -24,9 +25,16 @@ export const AllFruits = () => {
 
   return (
     <div>
-      <section className="header">
-        <h1>Fruits.co.uk</h1>
-        <button onClick={() => setMenuOpen(!menuOpen)}>Sort</button>
+      <section className={styles.header}>
+        <h1 className={styles.title}>Fruit.co.uk</h1>
+        <button
+          className={styles.sortButton}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          Sort
+        </button>
+      </section>
+      <section className={styles.allFruitBody}>
         {menuOpen ? (
           <SortFruit
             fruitList={fruitList}
@@ -34,25 +42,23 @@ export const AllFruits = () => {
             setFruitList={setFruitList}
           />
         ) : null}
+        {fruitList.length > 0 ? (
+          <section className={styles.fruitList}>
+            {fruitList.slice(0, numberOfResults).map((fruit) => {
+              return (
+                <Link to={`/${fruit.name}`}>
+                  <FruitCard fruit={fruit} key={fruit.id} />
+                </Link>
+              );
+            })}
+          </section>
+        ) : (
+          <h2>Loading...</h2>
+        )}
+        {numberOfResults < fruitList.length ? (
+          <button onClick={() => moreFruit()}>Load more</button>
+        ) : null}
       </section>
-      {fruitList.length > 0 ? (
-        <ul>
-          {fruitList.slice(0, numberOfResults).map((fruit) => {
-            return (
-              <Link to={`/${fruit.name}`}>
-                <li key={fruit.id}>
-                  <FruitCard fruit={fruit} />
-                </li>
-              </Link>
-            );
-          })}
-        </ul>
-      ) : (
-        <h2>Loading...</h2>
-      )}
-      {numberOfResults < fruitList.length ? (
-        <button onClick={() => moreFruit()}>Load more</button>
-      ) : null}
     </div>
   );
 };
