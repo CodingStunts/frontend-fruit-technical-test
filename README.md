@@ -57,6 +57,8 @@ I extracted some functionality into a utils folder, one for the API calls to the
 
 Since the Fruit API only had limited sorting functionality I created my own functions to deal with this and manipulate the data in the front end. Ideally I would have done this API side, if given the option.
 
+I realise that if you were to share the link with the query for the sort and someone were to follow it the list doesn't correspond to this upon following the hyperlink. With more time I would have used a useEffect to duplicate the functionality of the confirm sort button, if I had more time to develop this further.
+
 ## Styling
 
 I tried to make the styling as simple as possible and just splash some fruity colours on there. Hope it's not offensively bright, but it looks pretty close to the wireframes to me. I used grid on the fruit list and flex elsewhere to order my elements and components.
