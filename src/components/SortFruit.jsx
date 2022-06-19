@@ -44,7 +44,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="sort"
             onChange={handleSort}
           />
-          <label for="carbohydrates">Carbohydrates</label>
+          <label htmlFor="carbohydrates">Carbohydrates</label>
           <br />
           <input
             type="radio"
@@ -53,7 +53,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="sort"
             onChange={handleSort}
           />
-          <label for="protein">Protein</label>
+          <label htmlFor="protein">Protein</label>
           <br />
           <input
             type="radio"
@@ -62,7 +62,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="sort"
             onChange={handleSort}
           />
-          <label for="fat">Fat</label>
+          <label htmlFor="fat">Fat</label>
           <br />
           <input
             type="radio"
@@ -71,7 +71,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="sort"
             onChange={handleSort}
           />
-          <label for="calories">Calories</label>
+          <label htmlFor="calories">Calories</label>
           <br />
           <input
             type="radio"
@@ -80,7 +80,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="sort"
             onChange={handleSort}
           />
-          <label for="sugar">Sugar</label>
+          <label htmlFor="sugar">Sugar</label>
           <br />
         </section>
         <section className={styles.sortByOrder}>
@@ -92,7 +92,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="order"
             onChange={handleOrder}
           />
-          <label for="highToLow">High to low</label>
+          <label htmlFor="highToLow">High to low</label>
           <br />
           <input
             type="radio"
@@ -101,7 +101,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             name="order"
             onChange={handleOrder}
           />
-          <label for="lowToHigh">Low to high</label>
+          <label htmlFor="lowToHigh">Low to high</label>
         </section>
         <button type="reset" value="clear" onClick={resetSort}>
           Clear sort

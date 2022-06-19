@@ -41,7 +41,7 @@
 
 # Details
 
-I started trying to crack on with this test on Thursday evening to hopefully try and get it all boxed off before the end of the weekend but I realised after a while it would probably take a bit longer than originally expected. I've been messing around with it on and off all weekend and put a fair bit of time into it.
+I started trying to crack on with this test on Thursday evening to hopefully try and get it all boxed off before the end of the weekend but I realised after a while it would probably take a bit longer than originally expected. I've been messing around with it on and off all weekend and put a fair bit of time into it. _API keys for the photo API should be sent alongside the email to Bankifi._
 
 ## CORS
 
@@ -70,3 +70,5 @@ Getting the photos involved complicated a few things for me. I wasn't sure where
 I kept the error handling simple on this as I used state to store the error and caught them using Axios built in error handling messages and catch blocks which I then rendered in the components. I did this on API calls for all fruit, single fruit, and if there was an error in returning an image. Again, I'd have liked to have made this more robust, however in the interest of time I kept it basic.
 
 ## Testing
+
+I started writing testing for my utils function for sorting and order. Given more time I would have liked to have tested my fetch functions to some degree and also done some testing on my react components mounting, but I ran out of time.
