@@ -9,12 +9,10 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
   const [sortParams, setSortParams] = useSearchParams();
 
   const handleSort = (e) => {
-    e.preventDefault();
     setSortCriteria(e.target.value);
   };
 
   const handleOrder = (e) => {
-    e.preventDefault();
     setOrder(e.target.value);
   };
 
@@ -42,6 +40,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="carbohydrates"
             value="carbohydrates"
             name="sort"
+            checked={"carbohydrates" === sortCriteria}
             onChange={handleSort}
           />
           <label htmlFor="carbohydrates">Carbohydrates</label>
@@ -51,6 +50,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="protein"
             value="protein"
             name="sort"
+            checked={"protein" === sortCriteria}
             onChange={handleSort}
           />
           <label htmlFor="protein">Protein</label>
@@ -60,6 +60,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="fat"
             value="fat"
             name="sort"
+            checked={"fat" === sortCriteria}
             onChange={handleSort}
           />
           <label htmlFor="fat">Fat</label>
@@ -69,6 +70,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="calories"
             value="calories"
             name="sort"
+            checked={"calories" === sortCriteria}
             onChange={handleSort}
           />
           <label htmlFor="calories">Calories</label>
@@ -78,6 +80,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="sugar"
             value="sugar"
             name="sort"
+            checked={"sugar" === sortCriteria}
             onChange={handleSort}
           />
           <label htmlFor="sugar">Sugar</label>
@@ -90,6 +93,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="highToLow"
             value="highToLow"
             name="order"
+            checked={"highToLow" === order}
             onChange={handleOrder}
           />
           <label htmlFor="highToLow">High to low</label>
@@ -99,6 +103,7 @@ const SortFruit = ({ fruitList, fruitListCopy, setFruitList }) => {
             id="lowToHigh"
             value="lowToHigh"
             name="order"
+            checked={"lowToHigh" === order}
             onChange={handleOrder}
           />
           <label htmlFor="lowToHigh">Low to high</label>
