@@ -9,14 +9,19 @@ export const AllFruits = () => {
   const resultsPerLoad = 6;
   const [fruitList, setFruitList] = useState([]);
   const [fruitListCopy, setFruitListCopy] = useState([]);
+  const [error, setError] = useState(null);
   const [numberOfResults, setNumberOfResults] = useState(resultsPerLoad);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    getAllFruit().then((fruitData) => {
-      setFruitList(fruitData);
-      setFruitListCopy(fruitData);
-    });
+    getAllFruit()
+      .then((fruitData) => {
+        setFruitList(fruitData);
+        setFruitListCopy(fruitData);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   }, []);
 
   const moreFruit = () => {
@@ -42,6 +47,7 @@ export const AllFruits = () => {
             setFruitList={setFruitList}
           />
         ) : null}
+        {error && <div> {error} </div>}
         {fruitList.length > 0 ? (
           <section className={styles.fruitList}>
             {fruitList.slice(0, numberOfResults).map((fruit) => {

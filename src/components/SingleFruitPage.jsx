@@ -5,21 +5,26 @@ import styles from "../Modules-css/SingleFruitPage.module.css";
 
 export const SingleFruit = () => {
   const [fruit, setFruit] = useState([]);
+  const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    getSingleFruit(id).then((fruitData) => {
-      setFruit(fruitData);
-    });
+    getSingleFruit(id)
+      .then((fruitData) => {
+        setFruit(fruitData);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   }, [id]);
 
-  //Getting a yellow warning on console when calling navigation(-1) from onClick rather than a useEffect. Checking out later.
   return (
     <div>
       <section className={styles.header}>
         <h2 className={styles.title}>Fruit.co.uk</h2>
       </section>
+      {error && <div> {error} </div>}
       {fruit.name ? (
         <div className={styles.singleFruitPage}>
           <section className={styles.fruitDetails}>
@@ -47,7 +52,10 @@ export const SingleFruit = () => {
           </section>
         </div>
       ) : (
-        <h2>Loading...</h2>
+        <div>
+          <h2>Loading...</h2>
+          <button onClick={() => navigate(-1)}>Back to all fruit</button>
+        </div>
       )}
     </div>
   );
