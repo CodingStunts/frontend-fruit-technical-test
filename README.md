@@ -3,41 +3,41 @@
 ## Checklist for Requirements on original README
 
 1. Display all fruits in a list
-   ✔️ Show the name of each fruit
-   ✔️ Show an image for each fruit
-   ✔️ There are no images in the API so you will have to use keywords to source the images
+   ✔️ Show the name of each fruit <br>
+   ✔️ Show an image for each fruit <br>
+   ✔️ There are no images in the API so you will have to use keywords to source the images <br>
    _See details section below for more about the challenges with the images_
 
 2. Create a page for each fruit
-   ✔️ When a user clicks on a fruit they should be take to the fruit page
-   ✔️ Display information about the fruit as per the wireframes
-   ✔️ When the user clicks "Back to all fruit" they should be taken back to the fruit list
+   ✔️ When a user clicks on a fruit they should be take to the fruit page <br>
+   ✔️ Display information about the fruit as per the wireframes <br>
+   ✔️ When the user clicks "Back to all fruit" they should be taken back to the fruit list <br>
    ✔️ The url for each fruit page should be dynamic e.g www.fruit.com/apple should show all the apple information
 
 3. Allow user to sort the fruit
-   ✔️ When the user clicks the sort button in the header they should be shown the sort options
-   ✔️ User can sort by nutrition type
-   ✔️ User can sort high to low or low to high
-   ✔️ When the user clicks "Confirm sort" they should be shown a list of fruit sorted accordingly
+   ✔️ When the user clicks the sort button in the header they should be shown the sort options <br>
+   ✔️ User can sort by nutrition type <br>
+   ✔️ User can sort high to low or low to high <br>
+   ✔️ When the user clicks "Confirm sort" they should be shown a list of fruit sorted accordingly <br>
    ✔️ When the user clicks "Clear sort" they should be shown the original list of fruit not sorted
 
 4. Create a dynamic sorting URl
    ✔️ The sorting information should be in the URl e.g www.fruit.com/sort?nutrition=fat&order=highToLow
-   _Couldn't work out how to add `/sort` before the query string in the URL without breaking the whole thing._
+   _Couldn't work out how to add `/sort` before the query string in the URL without breaking the whole thing._ <br>
    ✔️ This url should show the user the list of items sorted in the order in the url parameters
 
 5. Add load more functionality
-   ✔️ The list of fruits should only show 6 items
-   ✔️ When the user clicks "Load more" 6 more items should be show
+   ✔️ The list of fruits should only show 6 items <br>
+   ✔️ When the user clicks "Load more" 6 more items should be show <br>
    ✔️ When all items are displayed "Load more" should be hidden
 
 ## Extra information
 
-✔️ There are a few mobile wireframes in the "wireframes" folder, use these and stick to the design.
-✔️ The designs are wireframes so you are free to chose a colour scheme.
+✔️ There are a few mobile wireframes in the "wireframes" folder, use these and stick to the design. <br>
+✔️ The designs are wireframes so you are free to chose a colour scheme. <br>
 
 - Test the functionality that you write.
-  ✔️ Make sure errors are handled and think about the user experience when handling those errors.
+  ✔️ Make sure errors are handled and think about the user experience when handling those errors. <br>
 
 ## Details
 
