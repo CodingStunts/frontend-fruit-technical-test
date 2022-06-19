@@ -52,8 +52,8 @@ export const AllFruits = () => {
           <section className={styles.fruitList}>
             {fruitList.slice(0, numberOfResults).map((fruit) => {
               return (
-                <Link to={`/${fruit.name}`}>
-                  <FruitCard fruit={fruit} key={fruit.id} />
+                <Link key={fruit.id} to={`/${fruit.name}`}>
+                  <FruitCard fruit={fruit} />
                 </Link>
               );
             })}
