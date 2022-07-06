@@ -1,8 +1,12 @@
 import axios from "axios";
 
-//Base API call
+//Base API calls
 export const fruitAPI = axios.create({
-  baseURL: "https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api",
+  baseURL: "/api",
+});
+
+export const photoAPI = axios.create({
+  baseURL: "/search",
 });
 
 // 1. All fruit GET request.
@@ -19,11 +23,9 @@ export const getSingleFruit = (fruitName) => {
   });
 };
 
+// 3. Get photos for each fruit
 export const getPhotos = (fruitName) => {
-  return axios
-    .get(
-      `https://api.unsplash.com/search/photos?page=1&per_page=1&query=${fruitName}-fruit&orientation=squarish&client_id=${process.env.REACT_APP_ACCESS_KEY}`
-    )
+  return photoAPI.get(`/photos?page=1&per_page=1&query=${fruitName}-fruit&orientation=squarish&client_id=${process.env.REACT_APP_ACCESS_KEY}`)
     .then((response) => {
       return response.data;
     });
